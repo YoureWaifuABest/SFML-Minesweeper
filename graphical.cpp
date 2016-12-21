@@ -226,7 +226,7 @@ void mine_distribute(std::vector< std::vector<int> > &grid)
 		xy.x = randombytes_uniform(GRIDSIZE);
 
 		/* Make sure the correct amount of bombs is placed */
-		if (grid[xy.y][xy.x] == 1)
+		if (grid[xy.y][xy.x] != 0)
 			i--;
 		else
 			grid[xy.y][xy.x] = 1;
