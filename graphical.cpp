@@ -61,6 +61,7 @@ class tile_map : public sf::Drawable
 void render_grid_graphical(std::vector< std::vector<int> > &grid)
 {
 	sf::RenderWindow window(sf::VideoMode(512, 256), "Minesweeper");
+	sf::View view(sf::Vector2f(100, 100), sf::Vector2f(200, 300));
 	bool lost, won, al_sel, distributed;
 	struct point xy;
 	sf::Font tewi;
@@ -134,8 +135,9 @@ void render_grid_graphical(std::vector< std::vector<int> > &grid)
 
 				case sf::Event::MouseButtonReleased:
 					if (event.mouseButton.button == sf::Mouse::Left) {
-						unsigned int mousex = event.mouseButton.x;
-						unsigned int mousey = event.mouseButton.y;
+						sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+						unsigned int mousex = mousePos.x;
+						unsigned int mousey = mousePos.y;
 						if (mousex < 200 && mousey < 200) {
 							/* There's probably faster way to do this than casting to int */
 							xy.y = (unsigned int)(mousex / 20);
@@ -200,6 +202,7 @@ void render_grid_graphical(std::vector< std::vector<int> > &grid)
 		}
 		}
 		window.clear(sf::Color::Black);
+		window.setView(view);
 		window.draw(map);
 		if (lost)
 			window.draw(lost_text);
