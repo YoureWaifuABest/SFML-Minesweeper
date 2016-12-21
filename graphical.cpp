@@ -72,7 +72,7 @@ void render_grid_graphical(std::vector< std::vector<int> > &grid)
 	sf::Text exit;
 	sf::Text text;
 
-	if (!tewi.loadFromFile("tewi.bdf"))
+	if (!tewi.loadFromFile("tewi2a-medium-11.pcf.gz"))
 		std::cout << "Couldn't find tewi font!" << std::endl;
 
 	/* There's definitely a better way to do this */
