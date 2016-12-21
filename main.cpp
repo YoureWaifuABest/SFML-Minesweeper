@@ -2,7 +2,7 @@
  * Licensed under the MIT license.
  * Read LICENSE for more information.
  *
- * github: https://github.com/YoureWaifuABest/small-c-minesweeper
+ * github: https://github.com/YoureWaifuABest/SFML-Minesweeper 
  */
 #include <iostream>
 #include <sodium.h>

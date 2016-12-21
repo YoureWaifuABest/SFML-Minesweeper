@@ -61,7 +61,7 @@ class tile_map : public sf::Drawable
 void render_grid_graphical(std::vector< std::vector<int> > &grid)
 {
 	sf::RenderWindow window(sf::VideoMode(512, 256), "Minesweeper");
-	sf::View view(sf::Vector2f(100, 100), sf::Vector2f(200, 300));
+	sf::View view(sf::FloatRect(0, 0, 200, 240));
 	bool lost, won, al_sel, distributed;
 	struct point xy;
 	sf::Font tewi;
