@@ -109,7 +109,7 @@ void render_grid_graphical(std::vector< std::vector<int> > &grid)
 	text.setColor(sf::Color::White);
 	text.setString("Already Selected!");	
 	text.setCharacterSize(11);
-	text.setPosition(0, 101);
+	text.setPosition(0, 201);
 
 	tile_map map;
 
